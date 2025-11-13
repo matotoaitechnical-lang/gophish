@@ -14,6 +14,10 @@ import (
 // CSRFExemptPrefixes are a list of routes that are exempt from CSRF protection
 var CSRFExemptPrefixes = []string{
 	"/api",
+	"/login",
+	"/logout", 
+	"/reset_password",
+	"/forgot",
 }
 
 // CSRFExceptions is a middleware that prevents CSRF checks on routes listed in
