@@ -1,20 +1,17 @@
-# Use a base image. You can find the official one on Docker Hub, or build from source.
-# Option A: Use a pre-built binary (simpler)
 FROM alpine:latest
 
 # Install dependencies
 RUN apk add --no-cache --update jq
 
-# Copy the GoPhish binary and the start script into the container
-# (You need to download the Linux AMD64 version of GoPhish for this to work)
+# Copy the GoPhish binary and start script
 COPY gophish /
 COPY start.sh /
 
-# Make the script and binary executable
+# Make them executable
 RUN chmod +x /start.sh /gophish
 
-# Expose the admin and phishing ports
+# Expose ports
 EXPOSE 3333 8080
 
-# Start the service using the custom script
+# Use the start script
 CMD ["/start.sh"]
