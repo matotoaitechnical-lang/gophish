@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gophish-admin
+    env: docker
+    plan: free # or starter for a persistent disk
+    docker:
+      dockerfile: Dockerfile
+    envVars:
+      - key: GOPHISH_ADMIN_LISTEN_URL
+        value: "0.0.0.0:3333"
+      - key: GOPHISH_PHISH_LISTEN_URL
+        value: "0.0.0.0:8080"
+    ports:
+      - port: 3333
+        protocol: TCP
+      - port: 8080
+        protocol: TCP
