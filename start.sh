@@ -13,9 +13,12 @@ cat > /data/gophish/config.json << 'EOF'
         "listen_url": "0.0.0.0:3333",
         "use_tls": false
     },
-    "phish_server": {
-        "listen_url": "0.0.0.0:8080",
-        "use_tls": false
+"phish_server": {
+    "listen_url": "0.0.0.0:443",
+    "use_tls": true,
+    "cert_path": "your_domain.crt",
+    "key_path": "your_domain.key"
+    
     },
     "db_name": "postgres",
     "db_path": "placeholder",
