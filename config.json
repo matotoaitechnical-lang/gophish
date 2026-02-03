@@ -5,7 +5,7 @@
     },
     "phish_server": {
         "listen_url": "0.0.0.0:80",
-        "use_tls": false
+        "use_tls": true
     },
     "db_name": "sqlite3",
     "db_path": "gophish.db",
